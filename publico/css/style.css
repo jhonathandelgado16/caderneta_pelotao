@@ -1,0 +1,22 @@
+.nav-color{
+	background-color: #002b80;
+}
+
+@font-face {
+	font-family: Teko;
+	src: url(../fonts/Teko-Light.ttf);
+}
+
+h1 {
+	font-family: Teko;
+	font-size: 55px !important;
+	color: black;
+	margin-bottom: 0;
+	text-shadow: 0.1em 0.1em 0.2em black
+}
+
+p {
+	font-family: Teko;
+	color: white;
+}
+
