@@ -54,6 +54,25 @@
                 <input id="endereco" value="<?= $militar->getEndereco() ?>" type="text" class="form-control" readonly>
             </div>
 
+            <div class="card-nome col-12 row">
+                <div class="col-1">
+                    <?php if($militar->getIdQualificacaoMilitar() != null){ ?>
+                        <img class="" src="<?= URL_PUBLICO . $militar->getQualificacaoMilitar()->getImg()  ?>" alt="" height="90">
+                    <?php } ?>
+                </div>
+
+                <div class="col text-center">
+                    <label class="control-label" for="militar">Militar</label>
+                    <p><?= $militar->getMilitarCompleto() ?></p>
+                </div>
+                
+                <div class="col-1">
+                    <?php if($militar->getIdQualificacaoMilitar() != null){ ?>
+                        <img class="" src="<?= URL_PUBLICO . $militar->getQualificacaoMilitar()->getImg()  ?>" alt="" height="90">
+                    <?php } ?>
+                </div>
+            </div>
+
             <div class="col-4">
                 <div class="form-group ficha">
                     <div class="card-titulo row">
@@ -115,15 +134,11 @@
             </div>
 
                 <div class="col-4">
-                    <div class="form-group text-center ficha">
-                        <label class="control-label" for="militar">Militar</label>
-                        <p><?= $militar->getMilitarCompleto() ?></p>
-                    </div>
                     <div class="form-group avaliacao">
-                    <div class="card-titulo">
+                    <div class="card-titulo col-12">
                         <div class="row">
                             <h3 class="col">Avaliação</h3>
-                            <img class="col-3" src="<?= URL_PUBLICO . '/img/avaliacao-fundo.png'  ?>" alt="" height="50" width="50">
+                            <img class="col-3" src="<?= URL_PUBLICO . '/img/avaliacao-titulo.png'  ?>" alt="" height="50" width="50">
                         </div>                        
                     </div>
                     <?php if (empty($avaliacoes)){ ?>
@@ -316,8 +331,13 @@
                 </div>
                 
                 <div class="col-4">
-                    <div class="form-group ficha vacina">
-                        <h3>Vacinas</h3>
+                    <div class="form-group ficha">
+                        <div class="card-titulo col-12">
+                            <div class="row">
+                                <h3 class="col">Vacinas</h3>
+                                <img class="col-3" src="<?= URL_PUBLICO . '/img/vacinas-titulo.png'  ?>" alt="" height="50" width="50">
+                            </div>  
+                        </div>
                         <table class="table">
                             <tbody class="col-xs-12">
                             <tr>
@@ -340,8 +360,13 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="form-group ficha recompensa">
-                        <h3>Recompensas</h3>
+                    <div class="form-group ficha">
+                    <div class="card-titulo col-12">
+                            <div class="row">
+                                <h3 class="col">Recompensas</h3>
+                                <img class="col-3" src="<?= URL_PUBLICO . '/img/recompensa-titulo.png'  ?>" alt="" height="50" width="50">
+                            </div>  
+                        </div>
                         <table class="table">
                             <tbody class="col-12">
                             <tr>

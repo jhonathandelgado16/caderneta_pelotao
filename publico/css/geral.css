@@ -564,5 +564,11 @@ body::-webkit-scrollbar {
 	border: #011c03 2px solid;
   }
 
+  .card-nome {
+	font-size: 30px;
+	background-color: #011c03;
+	margin-bottom: 20px;
+	color: #ffffff;
+  }
 
 

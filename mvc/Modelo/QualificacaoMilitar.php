@@ -9,16 +9,18 @@ class QualificacaoMilitar extends Modelo
     const BUSCAR_TODOS = 'SELECT * FROM qualificacao_militar';
     const BUSCAR_ID = 'SELECT * FROM qualificacao_militar WHERE id_qualificacao_militar = ?';
     const BUSCAR_NOME = 'SELECT * FROM qualificacao_militar WHERE qualificacao_militar LIKE ?';
-    const INSERIR = 'INSERT INTO qualificacao_militar(qualificacao_militar) VALUES (?)';
-    const ATUALIZAR = 'UPDATE qualificacao_militar SET qualificacao_militar = ? WHERE id_qualificacao_militar = ?';
+    const INSERIR = 'INSERT INTO qualificacao_militar(qualificacao_militar, img_qm) VALUES (?, ?)';
+    const ATUALIZAR = 'UPDATE qualificacao_militar SET qualificacao_militar = ?, img_qm = ? WHERE id_qualificacao_militar = ?';
     const DELETAR = 'DELETE FROM qualificacao_militar WHERE id_qualificacao_militar = ?';
     private $id_qualificacao_militar;
     private $qualificacao_militar;
+    private $img_qm;
        
 
-    public function __construct($qualificacao_militar = null, $id_qualificacao_militar = null)
+    public function __construct($qualificacao_militar = null, $img_qm = null, $id_qualificacao_militar = null)
     {
         $this->qualificacao_militar = $qualificacao_militar;
+        $this->img_qm = $img_qm;
         $this->id_qualificacao_militar = $id_qualificacao_militar;
 
     }
@@ -32,11 +34,21 @@ class QualificacaoMilitar extends Modelo
     {
         return $this->id_qualificacao_militar;
     }    
+
+    public function getImg()
+    {
+        return $this->img_qm;
+    }
     
 
     public function setQualificacaoMilitar($qualificacao_militar)
     {
         $this->qualificacao_militar = $qualificacao_militar;
+    }
+
+    public function setImg($img_qm)
+    {
+        $this->img_qm = $img_qm;
     }
 
     public function salvar()
@@ -69,6 +81,7 @@ class QualificacaoMilitar extends Modelo
         foreach ($registros as $registro) {
             $objetos[] = new QualificacaoMilitar(
                 $registro['qualificacao_militar'],
+                $registro['img_qm'],
                 $registro['id_qualificacao_militar'],
             );
         }
@@ -83,6 +96,7 @@ class QualificacaoMilitar extends Modelo
         $registro = $comando->fetch();
         return new QualificacaoMilitar(
                 $registro['qualificacao_militar'],
+                $registro['img_qm'],
                 $registro['id_qualificacao_militar'],
         );
     }
@@ -97,6 +111,7 @@ class QualificacaoMilitar extends Modelo
         if ($registro) {
             $qualificacao = new QualificacaoMilitar(
                 $registro['qualificacao_militar'],
+                $registro['img_qm'],
                 $registro['id_qualificacao_militar'],
             );
         }

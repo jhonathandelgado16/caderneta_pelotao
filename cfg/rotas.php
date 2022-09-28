@@ -437,10 +437,4 @@ $rotas = [
         'GET' => '\Controlador\PiControlador#editar',
     ],
 
-
-
-
-    '/layout/coordenador' => [
-        'GET' => '\Controlador\LayoutControlador#coordenador',
-    ],
 ];
